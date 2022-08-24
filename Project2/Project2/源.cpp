@@ -36,11 +36,11 @@
 //auto 自动变量，自动创建，自动销毁（局部变量），每个局部变量都是auto修饰的
 //extern 是用来申明外部符号
 //register 寄存器关键字
-int main()
-{
-	register int num = 1000;//建议num的值存放在寄存器中
-	return 0;
-}
+//int main()
+//{
+//	register int num = 1000;//建议num的值存放在寄存器中
+//	return 0;
+//}
 //计算机中数据可以存储到哪里？
 //寄存器 高速缓存 内存 硬盘 网盘
 // 更小   几十MB
@@ -52,3 +52,44 @@ int main()
 //union 联合体（共用体）
 //void 无 - 空
 //volatile 很难
+//define 不是关键字，是预处理指令
+//include 不是关键字，是预处理指令
+
+//typedef unsigned int u_int;//类型重命名（定义）
+//int main()
+//{
+//	unsigned int num1 = 100;
+//	u_int num2 = 1000;
+//
+//	return 0;
+//}
+
+//static - 静态的
+//1.static 修饰局部变量
+//2.修饰全局变量
+//3.修饰函数 
+
+
+void test()
+{
+	int a = 1;
+	a++;
+	printf("%d\n", a);
+
+
+}
+
+
+int main()
+{
+	int i = 0;
+	while (i < 10)
+	{
+		test();
+		i++;
+	
+	}
+
+
+	return 0;
+}
