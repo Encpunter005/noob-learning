@@ -345,28 +345,28 @@
 //条件操作符（三目操作符） exp1 ? exp2 : exp 3
 //exp1成立，exp2计算,得出的结果是 exp2
 //exp1不成立，exp3计算，得出的结果是 exp3
-//int main()
-//{
-//	int a = 0;
-//	int b = 3;
-//	int max = 0;
-//	scanf("%d  %d", & a ,& b);
-//     /*if (a > b)
-//		max = a;
-//	else
-//		max = b;*/
-//	max = a > b ? a : b;
-//	printf("%d\n", max);
-//	return 0;
-//}
 int main()
 {
 	int a = 0;
 	int b = 3;
-	int c = 5;
-	int d = (a = b + 2, c = a - 4, b = c + 2);
-	//逗号表达式，是从左向右依次计算
-	//整个表达式的结果是最后一个表达式的结果
-	printf("%d\n", d);
+	int max = 0;
+	scanf("%d  %d", & a ,& b);
+     /*if (a > b)
+		max = a;
+	else
+		max = b;*/
+	max = a > b ? a : b;
+	printf("%d\n", max);
 	return 0;
 }
+//int main()
+//{
+//	int a = 0;
+//	int b = 3;
+//	int c = 5;
+//	int d = (a = b + 2, c = a - 4, b = c + 2);
+//	//逗号表达式，是从左向右依次计算
+//	//整个表达式的结果是最后一个表达式的结果
+//	printf("%d\n", d);
+//	return 0;
+//}
