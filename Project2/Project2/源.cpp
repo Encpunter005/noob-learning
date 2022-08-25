@@ -46,11 +46,12 @@
 // 更小   几十MB
 //速度越快，空间越小
 //signed 有符号的 10 -20
-//unsigned 无符号的
+//unsigned 无符号整型
 //static 静态的
 //typedef 类型定义
-//union 联合体（共用体）
-//void 无 - 空
+//union 联合体（共用体）-数组
+//enum 枚举类型-数组
+//void 无 - 空类型（数据类型）
 //volatile 很难
 //define 不是关键字，是预处理指令
 //include 不是关键字，是预处理指令
@@ -93,3 +94,16 @@ int main()
 
 	return 0;
 }
+
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	
+//	printf("请输入两个整数\n");
+//	scanf("%d %d", &a, &b);
+//	int c = a + b;
+//	printf("%d\n", c);
+//	return 0; 
+//}
+
