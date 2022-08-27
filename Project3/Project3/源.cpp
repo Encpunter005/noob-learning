@@ -62,21 +62,51 @@
 //}
 
 //指针变量的大小 32位 32bit-4byte 64位 64bit-8byte
-int main()
-{
-	printf("%d\n",  sizeof(char*));//8
-	printf("%d\n",  sizeof(short*));//8
-	printf("%d\n",  sizeof(int*));//8
-	printf("%d\n",  sizeof(long*));//8
-	printf("%d\n",  sizeof(long long*));//8
-	printf("%d\n",  sizeof(float*));//8
-	printf("%d\n",  sizeof(double*));//8
+//int main()
+//{
+//	printf("%d\n",  sizeof(char*));//8
+//	printf("%d\n",  sizeof(short*));//8
+//	printf("%d\n",  sizeof(int*));//8
+//	printf("%d\n",  sizeof(long*));//8
+//	printf("%d\n",  sizeof(long long*));//8
+//	printf("%d\n",  sizeof(float*));//8
+//	printf("%d\n",  sizeof(double*));//8
+//
+//	return 0;
+//}
 
-	return 0;
-}
-
-
-
+//结构体，可以让c语言创建新的类型出来
+//创建一个学生
+//struct stu
+//{
+//	char name[20];//成员变量
+//	int age;
+//	double score;
+//	
+//
+//
+//};
+////创建一个书的类型
+//struct Book
+//{
+//
+//	char name[20];
+//	float price;
+//	char id[30];
+//
+//
+//
+//
+//};
+//int main()
+//{
+//	struct stu s = { "张三", 20 ,85.5 };//结构体的创建和初始化
+//	printf("1:%s %d %lf\n",s.name,s.age,s.score);//结构体变量.成员变量
+//	struct stu* ps = &s;
+//	printf("2: %s %d %lf\n",( * ps).name ,(*ps).age,(*ps).score );
+//	printf("3: %s %d %lf\n", ps->name, ps->age, ps->score);//结构体指针->成员名
+//	return 0;
+//}
 
 
 
