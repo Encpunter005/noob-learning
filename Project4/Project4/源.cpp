@@ -104,4 +104,110 @@
 //	
 //	
 //	return 0;
+////}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	if (1 == a % 2)
+//	{
+//		printf("是奇数\n");
+//	}
+//	int i = 0;
+//	for (i = 1; i <= 100; i += 2)
+//	{
+//	
+//		printf("%d\n", i);
+//	}
+//
+//
+//
+//	return 0;
 //}
+//switch语句
+//switch (整型表达式)
+//{
+//       语句项（case）
+//}
+//default子句
+//int main()
+//{
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch (day)
+//	{
+//	case 1:
+//		printf("Monday\n");
+//		break;
+//	case 2:
+//		printf("Tuesday\n");
+//		break;
+//	case 3:
+//		printf("Wednesday\n");
+//		break;
+//	case 4:
+//		printf("Thursday\n");
+//		break;
+//	case 5:
+//		printf("Friday\n");
+//		break;
+//	case 6:
+//		printf("Saturday\n");
+//		break;
+//	case 7:
+//		printf("Sunday\n");
+//		break;
+//	default:
+//		printf("输入错误");
+//		break;
+//
+//
+//	}
+//
+//
+//	return 0;
+//}
+//循环语句
+//int main()
+//{
+//
+//	int i = 10;
+//	while (i <= 100)
+//	{
+//		if (i == 50)
+//			continue;//跳过本次循环continue后面的代码，直接去判断部分，看是否进行下一次循环
+//			//break;//while循环中，break用于永久的终止循环
+//		
+//		printf("%d\n", i);
+//		i++;
+//	}
+//
+//
+//
+//
+//
+//
+//	return 0;
+//}
+//int main()
+//{
+//
+//
+//
+//	int ch = getchar();//获取一个字符
+//	printf("%c\n", ch);
+//	putchar(ch);//输出一个字符
+//
+//	return 0;
+//}
+int main()
+{
+	int ch = 0;
+	//ctrl+z - getchar读取结束
+	while ((ch = getchar()) != EOF)
+	{
+		putchar(ch);
+	}
+
+	return 0;
+}
