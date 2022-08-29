@@ -92,19 +92,18 @@
 //		printf("是奇数\n");
 //	}
 //	int i = 0;
-//	while ( i < 100)
+//	for ( i = 1;i < 100; i+=2)
 //	{
 //	
-//		i++;
-//		if (1 == i % 2)
-//		{
-//			printf("%d\n", i);
-//		}
+//		
+//		
+//		
+//		printf("%d\n", i);
 //	}
 //	
 //	
 //	return 0;
-////}
+//}
 //int main()
 //{
 //	int a = 0;
@@ -200,14 +199,102 @@
 //
 //	return 0;
 //}
+//int main()
+//{
+//	int ch = 0;
+//	//ctrl+z - getchar读取结束
+//	while ((ch = getchar()) != EOF)
+//	{
+//		putchar(ch);
+//	}
+//
+//	return 0;
+
+//}
+//int main()
+//{
+//	char password[20] = { 0 };
+//	
+//	printf("请输入密码\n");
+//	scanf("%s", password);//数组的数组名本来就是个地址 
+//	printf("请确认密码(Y/N)\n");
+//	//清理缓冲区
+//	//gets
+//	//getchar();//处理'\n'
+//	int tmp = 0;
+//	while ((tmp = getchar() ) != '\n')//！=检查两个操作数是否相等，不相等则为真(运算符)
+//	{
+//	
+//		;
+//	}
+//
+//	int ch = getchar();//getchar scanf输入函数。只要发现缓冲区有东西，就会立马拿走
+//	if (ch == 'Y')
+//	{
+//		printf("确认成功\n");
+//	}
+//	else
+//	{
+//		printf("确认失败\n");
+//	}
+//
+//
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)//EOF = -1
+//	{
+//		if (ch < '0' || ch>'9')
+//			continue;
+//		putchar(ch);
+//	
+//	}
+//	return 0;
+//}
+//for循环（表达式1；表达式2；表达式3）
+//  循环语句
+//执行顺序 1.初始化：表达式1 2.判断：表达式2 3.循环语句 4.调整：表达式3 5.->2. 6.->3. 7->4.
 int main()
 {
-	int ch = 0;
-	//ctrl+z - getchar读取结束
-	while ((ch = getchar()) != EOF)
+	int i = 0;
+	for (i = 1; i <= 10; i++)
 	{
-		putchar(ch);
+		if (i == 5)
+			break;
+	
+	
+	
+		printf("%d", i);
+	
 	}
+
+
+
+
+
+
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
