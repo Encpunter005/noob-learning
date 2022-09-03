@@ -257,29 +257,116 @@
 //for循环（表达式1；表达式2；表达式3）
 //  循环语句
 //执行顺序 1.初始化：表达式1 2.判断：表达式2 3.循环语句 4.调整：表达式3 5.->2. 6.->3. 7->4.
-int main()
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		if (i == 5)
+//			break;
+//	
+//	
+//	
+//		printf("%d", i);
+//	
+//	}
+//
+//
+//
+//
+//
+//
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	if (1 == a % 2)
+//	{
+//		printf("是奇数");
+//
+//	}
+//	int i = 0;
+//	for (i = 1; i <= 100; i+=2)
+//	{
+//		printf("%d\n",i);
+//	}
+//	return 0;
+//
+//}
+//请问循环多少次
+/*int main()
 {
 	int i = 0;
-	for (i = 1; i <= 10; i++)
+	int k = 0;
+	for (i = 0, k = 0; k = 0; i++, k++)
+		k++;
+
+
+	return 0;
+}*///0为假，循环次数为0
+//do
+//   循环语句 ；
+//while（表达式）；
+//int main()
+//{
+//
+//	int i = 0;
+//	do
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d\n", i);
+//
+//		i++;
+//		
+//	
+//	} while (i <= 10);
+//
+//
+//	return 0;
+//}
+//在一个有序的数组找到具体的某个数字n
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k = 0;//要查找的数字
+	scanf("%d", &k);
+    //在arr这个有序的数组中查找k（7）的值
+	int sz = sizeof(arr) / sizeof(arr[0]);//数组的元素个数
+	int left = 0;
+	int right = sz - 1;
+	
+	while (left<=right)
 	{
-		if (i == 5)
+		int mid = (left + right) / 2;
+		if (arr[mid] < k)
+		{
+			left = mid + 1;
+
+		}
+		else if (arr[mid] > k)
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			printf("找到了,下标:%d\n", mid);
 			break;
-	
-	
-	
-		printf("%d", i);
+		
+		}
 	
 	}
-
-
-
-
-
+	if (left > right)
+	{
+		printf("找不到\n");
+	}
 
 
 	return 0;
 }
-
 
 
 
