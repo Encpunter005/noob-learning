@@ -328,56 +328,212 @@
 //
 //	return 0;
 //}
-//在一个有序的数组找到具体的某个数字n
+//在一个有序的数组找到具体的某个数字n（折半查找算法）
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 0;//要查找的数字
+//	scanf("%d", &k);
+//    //在arr这个有序的数组中查找k（7）的值
+//	int sz = sizeof(arr) / sizeof(arr[0]);//数组的元素个数
+//	int left = 0;
+//	int right = sz - 1;
+//	
+//	while (left<=right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			printf("找到了,下标:%d\n", mid);
+//			break;
+//		
+//		}
+//	
+//	}
+//	if (left > right)
+// 
+//	{
+//		printf("找不到\n");
+//	}
+//
+//
+//	return 0;
+//}
+//编写代码，眼hi多个字符从两端移动，向中间汇聚
+#include <string.h>//strlen strcmp
+#include <Windows.h>
+#include <WinBase.h>
+//int main()
+//{
+//	char arr1[] = "welcome to bit!!!!!!!";
+//	char arr2[] = "######################";
+//	int left = 0;
+//	int right = strlen(arr1) - 1;//数组下标从0开始
+//	while (left <= right)
+//	{
+//
+// 
+//
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(600);
+//		system("cls");//清空屏幕
+//		left++;
+//		right--;
+//	}
+//
+//	return 0;
+//}
+//编写代码实现，模拟用户登录场景，并且只能登录三次。（只允许输入三次密码，如果密码正确则提示登录成功，如果三次均输入错误，则退出程序。）
+//int main()
+//{
+//	int i = 0;
+//
+//	char password[20] = { 0 };
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("请输入密码:");
+//		scanf("%s", password);
+//		if (strcmp(password, "123456") == 0)//两个字符串比较，不能使用==,应该使用strcmp:比较字符串函数,比较字符串的值
+//		{
+//			printf("登录成功\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("密码错误，重新输入！\n");
+//		}
+//	
+//
+//	}
+//	if (i == 3)
+//	{
+//		printf("错误三次，登录失败，滚\n");
+//	
+//	}
+//
+//	return 0;
+//}
+//猜数字游戏实现
+//1.自动产生一个1-100之间的随机数
+//2.猜数字
+//a.猜对了，就恭喜你，游戏结束
+//b.你猜错了，会告诉你猜大了，还是猜小了，继续猜，知道猜对
+//3.游戏一直玩，除非退出游戏
+//void menu()
+//{
+//	printf("******************************\n");
+//	printf("***********1.PLAY*************\n");
+//	printf("***********0.EXIT*************\n");
+//	printf("******************************\n");
+//}
+//猜数字游戏的实现
+//1.生成随机数-rand函数 - <stdlib.h>
+//2.猜数字
+#include <stdlib.h>
+#include <time.h>
+//RAND_MAX rand函数返回了一个0-32767之间的数字
+//时间-时间戳
+//void game()
+//{
+//	
+//	int ret = rand()%100+1;//%100的余数是0-99，然后+1，范围是1-100 
+//	//printf("%d\n", ret);
+//	int guess = 0;
+//	while (1)
+//	{
+//		printf("请猜数字\n");
+//		scanf("%d", &guess);
+//		if (guess < ret)
+//		{
+//			printf("猜小了\n");
+//		}
+//		else if (guess > ret)
+//		{
+//			printf("猜大了\n");
+//		}
+//		else
+//		{
+//			printf("恭喜你猜对了\n");
+//			break;
+//		}
+//	}
+//
+//}
+//int main()
+//
+//{
+//	int input = 0;
+//	srand((unsigned int)time(NULL));//srand需要一个unsigned int 的值
+//	do
+//	{
+//		
+//		menu();
+//		printf("请选择:\n");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			game();
+//			break;
+//		case 0:
+//			printf("退出游戏\n");
+//			break;
+//		default:
+//			printf("请重新选择\n");
+//			break;
+//		
+//		
+//		
+//		
+//		}
+//	} while (input);
+//	return 0;
+//}
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int k = 0;//要查找的数字
-	scanf("%d", &k);
-    //在arr这个有序的数组中查找k（7）的值
-	int sz = sizeof(arr) / sizeof(arr[0]);//数组的元素个数
-	int left = 0;
-	int right = sz - 1;
-	
-	while (left<=right)
+	int choose = 0;
+	printf("你想成为一个欧皇吗？(1/2)\n");
+	scanf("%d", &choose);
+	switch (choose)
 	{
-		int mid = (left + right) / 2;
-		if (arr[mid] < k)
+	case 1:
+	{
+		while (choose < 30001)
 		{
-			left = mid + 1;
+			choose++;
+			printf("我想当欧皇！%d\n", choose);
+
 
 		}
-		else if (arr[mid] > k)
+		if (choose == 30001)
 		{
-			right = mid - 1;
-		}
-		else
-		{
-			printf("找到了,下标:%d\n", mid);
+			printf("脱非成功\n");
 			break;
-		
 		}
-	
 	}
-	if (left > right)
-	{
-		printf("找不到\n");
+	default:
+		printf("很遗憾\n");
+		break;
+
 	}
-
-
 	return 0;
 }
+	
 
+	
 
-
-
-
-
-
-
-
-
-
+	
 
 
 
