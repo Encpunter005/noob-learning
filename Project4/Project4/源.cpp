@@ -375,7 +375,7 @@
 //int main()
 //{
 //	char arr1[] = "welcome to bit!!!!!!!";
-//	char arr2[] = "######################";
+//	char arr2[] = "#####################";
 //	int left = 0;
 //	int right = strlen(arr1) - 1;//数组下标从0开始
 //	while (left <= right)
@@ -386,8 +386,8 @@
 //		arr2[left] = arr1[left];
 //		arr2[right] = arr1[right];
 //		printf("%s\n", arr2);
-//		Sleep(600);
-//		system("cls");//清空屏幕
+//		//Sleep(600);
+//		//system("cls");//清空屏幕
 //		left++;
 //		right--;
 //	}
@@ -418,7 +418,7 @@
 //	}
 //	if (i == 3)
 //	{
-//		printf("错误三次，登录失败，滚\n");
+//		printf("错误三次，登录失败，鬼！\n");
 //	
 //	}
 //
@@ -500,44 +500,133 @@
 //	} while (input);
 //	return 0;
 //}
-int main()
+//int main()
+//{
+//	int choose = 0;
+//	printf("你想成为一个欧皇吗？(1/2)\n");
+//	scanf("%d", &choose);
+//	switch (choose)
+//	{
+//	case 1:
+//	{
+//		while (choose < 30001)
+//		{
+//			choose++;
+//			printf("我想当欧皇！%d\n", choose);
+//
+//
+//		}
+//		if (choose == 30001)
+//		{
+//			printf("脱非成功\n");
+//			break;
+//		}
+//	}
+//	default:
+//		printf("很遗憾\n");
+//		break;
+//
+//	}
+//	return 0;
+//}
+//	
+//int main()
+//{
+//	char password[100] = { 0 };
+//	
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("请输入口号:\n");
+//		scanf("%s", password);
+//		if (strcmp(password, "123456789") == 0)
+//		{
+//			printf("口号正确\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("口号错误，请重试！\n");
+//		}
+//			
+//	
+//	
+//	}
+//	if (i == 5)
+//	{
+//		printf("有多远滚多远\n");
+//	}
+//	return 0;
+//}
+
+void search()
 {
-	int choose = 0;
-	printf("你想成为一个欧皇吗？(1/2)\n");
-	scanf("%d", &choose);
-	switch (choose)
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	int left = 0;
+	int right = sz - 1;
+	printf("请输入要查找的数字\n");
+	int m = 0;
+	scanf("%d", &m);
+	
+	while (left <= right)
 	{
-	case 1:
-	{
-		while (choose < 30001)
+		int mid = (left + right) / 2;
+		if (arr[mid] < m)
 		{
-			choose++;
-			printf("我想当欧皇！%d\n", choose);
-
-
+			left = mid + 1;
 		}
-		if (choose == 30001)
+		else if (arr[mid] > m)
 		{
-			printf("脱非成功\n");
+			right = mid - 1;
+		}
+		else
+		{
+			printf("找到了\n");
 			break;
 		}
 	}
-	default:
-		printf("很遗憾\n");
-		break;
 
+	if (left > right)
+	{
+	
+		printf("找不到，鬼！\n");
+	
+	}
+
+
+
+
+}
+int main()
+{
+	printf("找数字不？（1-20）\n");
+	int idea = 0;
+	scanf("%d", &idea);
+	switch (idea)
+	{
+	case 1:
+	{
+		while (idea)
+			search();
+		break;
+	}
+	
+	case 0:
+	{
+	
+		printf("不想找，鬼!\n");
+		break;
+		
+	}
+	
 	}
 	return 0;
 }
 	
 
-	
-
-	
 
 
 
-
-
-
+		
 
