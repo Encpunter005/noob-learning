@@ -559,73 +559,156 @@
 //	return 0;
 //}
 
-void search()
-{
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
-	int sz = sizeof(arr)/sizeof(arr[0]);
-	int left = 0;
-	int right = sz - 1;
-	printf("请输入要查找的数字\n");
-	int m = 0;
-	scanf("%d", &m);
-	
-	while (left <= right)
-	{
-		int mid = (left + right) / 2;
-		if (arr[mid] < m)
-		{
-			left = mid + 1;
-		}
-		else if (arr[mid] > m)
-		{
-			right = mid - 1;
-		}
-		else
-		{
-			printf("找到了\n");
-			break;
-		}
-	}
-
-	if (left > right)
-	{
-	
-		printf("找不到，鬼！\n");
-	
-	}
-
-
-
-
-}
+//void search()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+//	int sz = sizeof(arr)/sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 1;
+//	printf("请输入要查找的数字\n");
+//	int m = 0;
+//	scanf("%d", &m);
+//	
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < m)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > m)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{    
+//			printf("找到了\n");
+//			break;
+//		}
+//	}
+//
+//	if (left > right)
+//	{
+//	
+//		printf("找不到，鬼！\n");
+//	
+//	}
+//
+//
+//
+//
+//}
+//int main()
+//{
+//	printf("找数字不？（1-20）\n");
+//	int idea = 0;
+//	scanf("%d", &idea);
+//	switch (idea)
+//	{
+//	case 1:
+//	{
+//		while (idea)
+//			search();
+//		break;
+//	}
+//	
+//	case 0:
+//	{
+//	
+//		printf("不想找，鬼!\n");
+//		break;
+//		
+//	}
+//	
+//	}
+//	return 0;
+//}
+//int func(int a)
+//{
+//	int b;
+//	switch (a)
+//	{
+//	case 1: b = 30;
+//	case 2: b = 20;
+//	case 3: b = 16;
+//	default: b = 0;
+//
+//	}
+//
+//	return b;
+//
+//}
+//int main()
+//{
+//
+//	printf("%d", func(1));
+//
+//	return 0;
+//}
+//F10逐过程
+//F11逐语句
+//int main()
+//{
+//	int x = 3;
+//	int y = 3;
+//	switch (x % 2)
+//	{
+//	case 1:
+//		switch (y)
+//		{
+//		case 0:
+//			printf("first");
+//		case 1:
+//			printf("second");
+//			break;
+//		default:printf("hello");
+//		}
+//	case 2:
+//		printf("third");
+//	
+//	}
+//
+//	return 0;
+//}
+//输入数字，从大到小输出
 int main()
 {
-	printf("找数字不？（1-20）\n");
-	int idea = 0;
-	scanf("%d", &idea);
-	switch (idea)
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	//输入
+	scanf("%d %d %d", &a, &b, &c);
+	//调整
+	if (a > b)
 	{
-	case 1:
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
+	if (a < c)
 	{
-		while (idea)
-			search();
-		break;
+		int tmp = a;
+		a = c;
+		c = tmp;
+
 	}
-	
-	case 0:
+	if (b < c)
 	{
-	
-		printf("不想找，鬼!\n");
-		break;
-		
-	}
+		int tmp = b;
+		b = c;
+		c = tmp;
 	
 	}
+	//输出
+	printf("%d %d %d\n", a, b, c);
+
+
+
+
+
+
 	return 0;
 }
-	
-
-
 
 
 		
