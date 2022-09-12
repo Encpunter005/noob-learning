@@ -440,15 +440,15 @@
 //猜数字游戏的实现
 //1.生成随机数-rand函数 - <stdlib.h>
 //2.猜数字
-#include <stdlib.h>
-#include <time.h>
+//#include <stdlib.h>
+//#include <time.h>
 //RAND_MAX rand函数返回了一个0-32767之间的数字
 //时间-时间戳
 //void game()
 //{
 //	
 //	int ret = rand()%100+1;//%100的余数是0-99，然后+1，范围是1-100 
-//	//printf("%d\n", ret);
+//	printf("%d\n", ret);
 //	int guess = 0;
 //	while (1)
 //	{
@@ -559,70 +559,74 @@
 //	return 0;
 //}
 
-//void search()
-//{
-//	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
-//	int sz = sizeof(arr)/sizeof(arr[0]);
-//	int left = 0;
-//	int right = sz - 1;
-//	printf("请输入要查找的数字\n");
-//	int m = 0;
-//	scanf("%d", &m);
-//	
-//	while (left <= right)
-//	{
-//		int mid = (left + right) / 2;
-//		if (arr[mid] < m)
-//		{
-//			left = mid + 1;
-//		}
-//		else if (arr[mid] > m)
-//		{
-//			right = mid - 1;
-//		}
-//		else
-//		{    
-//			printf("找到了\n");
-//			break;
-//		}
-//	}
-//
-//	if (left > right)
-//	{
-//	
-//		printf("找不到，鬼！\n");
-//	
-//	}
-//
-//
-//
-//
-//}
-//int main()
-//{
-//	printf("找数字不？（1-20）\n");
-//	int idea = 0;
-//	scanf("%d", &idea);
-//	switch (idea)
-//	{
-//	case 1:
-//	{
-//		while (idea)
-//			search();
-//		break;
-//	}
-//	
-//	case 0:
-//	{
-//	
-//		printf("不想找，鬼!\n");
-//		break;
-//		
-//	}
-//	
-//	}
-//	return 0;
-//}
+int idea = 0;
+int x = 0;
+
+void search()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int left = 0;
+	int right = sz - 1;
+	printf("请输入要查找的数字\n");
+	int m = 0;
+	scanf("%d", &m);
+
+	while (left <= right)
+	{
+		int mid = (left + right) / 2;
+		if (arr[mid] < m)
+		{
+			left = mid + 1;
+		}
+		else if (arr[mid] > m)
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			printf("找到了\n");
+			break;
+		}
+	}
+
+	if (left > right)
+	{
+		printf("找不到，鬼！\n");
+	}
+
+	idea = 3;
+
+
+}
+int main()
+{
+
+	do
+	{
+		printf("找数字不？（1-20）\n");
+		scanf("%d", &idea);
+
+		switch (idea)
+		{
+		case 1:
+		{
+			while (idea == 1) {
+				search();
+			}
+			break;
+		}
+		case 0:
+		{
+			printf("不想找，鬼!\n");
+			break;
+		}
+
+		}
+		scanf("%d", &x);
+	} while (x == 0);
+	return 0;
+}
 //int func(int a)
 //{
 //	int b;
@@ -776,23 +780,32 @@
 //
 //}
 //打印1000-2000的闰年
-int main()
+//int main()
+//{
+//	int y = 0;
+//	for (y = 1000; y <= 2000; y++)
+//	{
+//	//判断y是不是闰年
+//    //1.被4整除，不能被100整除
+//	//2.不能被400整除
+//		/*if (y % 4 == 0 && y%100 != 0 )
+//		{
+//			printf("%d\n", y);
+//		
+//		}*/
+//		if (y % 400 != 0)
+//			printf("%d\n", y);
+//	}
+//
+//
+//
+//
+//
+//
+//	return 0;
+//}
+/*int main()
 {
-	int y = 0;
-	for (y = 1000; y <= 2000; y++)
-	{
-	//判断y是不是闰年
-    //1.被4整除，不能被100整除
-	//2.不能被400整除
-		/*if (y % 4 == 0 && y%100 != 0 )
-		{
-			printf("%d\n", y);
-		
-		}*/
-		if (y % 400 != 0)
-			printf("%d\n", y);
-	}
-
 
 
 
@@ -800,5 +813,5 @@ int main()
 
 	return 0;
 }
-		
+	*/	
 
