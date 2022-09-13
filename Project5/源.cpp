@@ -87,26 +87,98 @@
 //函数的参数
 //实际的参数，必须要确切的值                
 //形式的参数，当函数调用完之后会自动销毁，因此形式函数参数只在函数中有效
-int is_prime(int n)
+#include <math.h>
+//int is_prime(int n)
+//{
+//	//2->n-1
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (0 == n % j)
+//			return 0;
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int i = 0;
+//	//100~200之间的素数
+//	for (i = 100; i <= 200; i++)
+//	{
+//	//判断i是否是素数
+//		if (1 == is_prime(i))
+//			printf("%d\n", i);
+//	}
+//	return 0;
+//}
+//写一个函数判断一年是不是闰年
+//一个函数如果不写返回类型，默认返回int类型
+//int is_leapyear(int n)
+//{
+//	if (0 == n%4 && 0 != n%100)
+//	{
+//		return 0;
+//	}
+//	else
+//		return 1;
+//
+//
+//} 
+//int main()
+//{
+//	int y = 0;
+//	for (y = 1000; y <= 2000; y++)
+//	{
+//		is_leapyear(y);
+//		if (is_leapyear(y) == 1)
+//		{
+//			printf("%d ", y);
+//		}
+//	}
+//	return 0;
+//}
+//写一个函数，实现二分查找
+int bsearch(int arr[],int key,int sz)
 {
-	//2->n-1
-	int j = 0;
-	for (j = 2; j < n; j++)
+	int left = 0;
+	int right = sz - 1;
+	int mid = (left + right)/2;
+	while (left <= right)
 	{
-		if (0 == n % j)
-			return 0;
+		if (arr[mid] < key)
+		{
+			left = mid + 1;
+		}
+		else if (arr[mid] > key)
+		{
+			right = mid - 1;
+		}
+		else
+		{
+
+			return  mid;
+		}
+	
 	}
-	return 1;
-}
+	return -1;
+	}
 int main()
 {
-	int i = 0;
-	//100~200之间的素数
-	for (i = 100; i <= 200; i++)
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+	int key = 15;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//找到了就返回找到位置的下标
+	//找不到就返回-1
+	//scanf("%d", &key);
+	int ret = bsearch(arr,key,sz);
+	if (-1 == ret)
 	{
-	//判断i是否是素数
-		if (1 == is_prime(i))
-			printf("%d\n", i);
+		printf("找不到\n");
+
+	}
+	else
+	{
+		printf("找到了，下标是%d\n", ret);
 	}
 	return 0;
 }
