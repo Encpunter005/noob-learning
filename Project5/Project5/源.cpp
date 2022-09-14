@@ -263,13 +263,59 @@
 #include "add.h"//函数的声明一般放在头文件
 #include "sub.h"
 
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int c = Add(a, b);
+//	int d = Sub(a, b);
+//	printf("%d \n", c);
+//	printf("%d \n", d);
+//	return 0;
+//}
+//函数递归---把大事化小
+// 必要条件
+// 1.存在限制条件，当满足这个限制条件的时候，递归便不在继续
+// 2.每次递归调用之后，越来越接近这个限制条件
+//写递归代码的时候：
+// 1.不能死递归，都有跳出条件，每次递归逼近跳出条件
+// 2.递归层次不能太深
+//int main()
+//{
+//	printf("helloworld\n");
+//	main();//栈溢出：动态内存满了
+//	return 0;
+//}
+//接受一个整型值（无符号），按照顺序打印它的每一位，例如：输入：1234，输出1 2 3 4 
+//1234%10=4 
+//print(123) 4
+//print(12) 3 4
+//print(1) 2 3 4
+
+void print(unsigned int num)
+{
+	if (num > 9)
+	{
+		print(num / 10);
+
+	}
+	printf("%d ", num % 10);
+
+}
 int main()
 {
-	int a = 10;
-	int b = 20;
-	int c = Add(a, b);
-	int d = Sub(a, b);
-	printf("%d \n", c);
-	printf("%d \n", d);
+	unsigned int num = 0;
+	scanf("%u", &num);
+	print(num);//打印参数
 	return 0;
 }
+//内存
+//栈区：局部变量 函数形参（都是临时变量），每一个函数调用，都要在栈区上分配一块空间 example main（栈帧空间）
+//栈溢出：每次递归，函数都会占用一定的内存，多次递归，栈区被消耗完毕，而递归还在进行，此时就会栈溢出
+//
+//
+//堆区：动态内存分配的 malloc/free/calloc/realloc
+//
+//
+//
+//静态区：全局变量 静态变量
