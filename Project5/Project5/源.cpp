@@ -292,23 +292,23 @@
 //print(12) 3 4
 //print(1) 2 3 4
 
-void print(unsigned int num)
-{
-	if (num > 9)
-	{
-		print(num / 10);
-
-	}
-	printf("%d ", num % 10);
-
-}
-int main()
-{
-	unsigned int num = 0;
-	scanf("%u", &num);
-	print(num);//打印参数
-	return 0;
-}
+//void print(unsigned int num)
+//{
+//	if (num > 9)
+//	{
+//		print(num / 10);
+//
+//	}
+//	printf("%d ", num % 10);
+//
+//}
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%u", &num);
+//	print(num);//打印参数
+//	return 0;
+//}
 //内存
 //栈区：局部变量 函数形参（都是临时变量），每一个函数调用，都要在栈区上分配一块空间 example main（栈帧空间）
 //栈溢出：每次递归，函数都会占用一定的内存，多次递归，栈区被消耗完毕，而递归还在进行，此时就会栈溢出
@@ -319,3 +319,113 @@ int main()
 //
 //
 //静态区：全局变量 静态变量
+//编写函数不允许创建临时变量，求字符串长度
+//int my_strlen(char *str)//（传统）
+//{
+//	int count = 0;
+//	while(*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	char arr[] = "helloworld";
+//	//[h][e][l][l][o][w][o][r][l][d][\0] strlen不计算\0
+//	printf("%d\n", my_strlen(arr));//(模拟strlen函数)数组在传参时是使用首元素的地址
+//	return 0.;
+//}
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//	{
+//		return  1 + my_strlen(str + 1);
+//	}
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[] = "helloworld";
+//	//[h][e][l][l][o][w][o][r][l][d][\0] strlen不计算\0
+//	printf("%d\n", my_strlen(arr));//(模拟strlen函数)数组在传参时是使用首元素的地址
+//	return 0.;
+//}
+//求n的阶乘
+//int test(int n)
+//{
+//	if (n <= 1)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//	return n*test(n-1)
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = test(n);
+//	printf("%d", ret);
+//	return 0;
+//}
+//求第n个斐波那契数列
+//int  count = 0;
+//int Fib(int n)
+//{
+//	//if (n == 3)//统计第三个斐波那契数
+//	//{
+//	//	count++;
+//	//}
+//	//if (n <= 2)//效率低
+//	//{
+//	//	return 1;
+//	//}
+//	//else
+//	//	return Fib(n - 1) + Fib(n - 2);
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = Fib(n);
+//	printf("%d\n", ret);
+//	printf("count = %d\n", count);
+//	return 0;
+//}
+int test(int n)
+{
+	if (n <= 2 )
+	{
+	
+		return 1;
+	}
+	else
+	{
+		return test(n - 1);
+	}
+
+}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int ret = test(n);
+	printf("%d\n", ret);
+	return 0;
+}
