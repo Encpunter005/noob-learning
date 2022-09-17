@@ -408,24 +408,112 @@
 //	printf("count = %d\n", count);
 //	return 0;
 //}
-int test(int n)
+//int test(int n)
+//{
+//	if (n <= 2 )
+//	{
+//	
+//		return 1;
+//	}
+//	else
+//	{
+//		return test(n - 1);
+//	}
+//
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = test(n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	for (a = 1, b = 1; a <= 100; a++)
+//	{
+//		if (b >= 20)
+//			break;
+//		if (b % 3 == 1)
+//		{
+//			b = b + 3;
+//			continue;
+//		}
+//		b = b - 5;
+//	}
+//	printf("%d\n", a);
+//	return 0;
+//}
+//编写程序数一下1-100的所有整数中出现多少个数字9 9 19 29 39 49 59 69 79 89 99 91 92 93 94 95 96 97 98 
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 1; i <= 100; i++)
+//	{
+//		if (i % 10 == 9)
+//		{
+//			count++;
+//		}
+//		if (i / 10 == 9)
+//		{
+//			count++;
+//		}
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+//分数求和。计算1/1+1/2+1/3+..........+1/100的值
+//int main()
+//{
+//	double result = 0;
+//	double n = 0;
+//	double i = 1;
+//	for (n = 1; n <= 100; n++)
+//	{
+//		result += i * 1.0/n;
+//		i = -i;
+//	}
+//	printf("%lf", result);
+//	return 0;
+//}
+//求10个整数的最大值
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int max = 0;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		if (arr[i] > max)
+//			max = arr[i];
+//	}
+//	printf("%d\n", max);
+//	return 0;
+//}
+//汉诺塔
+int n = 0;//盘子
+void hanoi(int n,char a,char b,char c )
 {
-	if (n <= 2 )
+	if (n > 0)
 	{
-	
-		return 1;
+		hanoi(n - 1, a, c, b);
+		printf("%c ->%c\n", a, c);
+		hanoi(n - 1, b, a, c);	
 	}
-	else
-	{
-		return test(n - 1);
-	}
-
 }
+
+
+
+
 int main()
 {
-	int n = 0;
+	
 	scanf("%d", &n);
-	int ret = test(n);
-	printf("%d\n", ret);
+	printf("步骤为: \n");
+	hanoi(n, 'A', 'B', 'c');
 	return 0;
 }
