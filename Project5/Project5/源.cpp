@@ -483,8 +483,8 @@
 //求10个整数的最大值
 //int main()
 //{
-//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-//	int max = 0;
+//	int arr[10] = { -1,-2,-3,-4,-5,-6,-7,-8,-9,-10 };
+//	int max = arr[0];
 //	int i = 0;
 //	for (i = 0; i < 10; i++)
 //	{
@@ -495,25 +495,74 @@
 //	return 0;
 //}
 //汉诺塔
-int n = 0;//盘子
-void hanoi(int n,char a,char b,char c )
+//int n = 0;//盘子
+//void hanoi(int n,char a,char b,char c )
+//{
+//	if (n > 0)
+//	{
+//		hanoi(n - 1, a, c, b);
+//		printf("%c ->%c\n", a, c);
+//		hanoi(n - 1, b, a, c);	
+//	}
+//}
+//
+//
+//
+//
+//int main()
+//{
+//	
+//	scanf("%d", &n);
+//	printf("步骤为: \n");
+//	hanoi(n, 'A', 'B', 'c');
+//	return 0;
+//}
+//屏幕上输出乘法口诀表,输入9则打印9*9。输入12则打印12*12
+//1*1
+//2*1 2*2
+// 3*1 3*2 3*3
+//4*1 4*2 4*3 4*4
+//..........
+//void print_table(int n)
+//{
+//	int i = 0;
+//	int g = 0;
+//	for (i = 1; i <= n; i++)//打印一行
+//	{
+//		for (g = 1; g <= i; g++)
+//		{
+//			printf("%d * %d = %d\n", i, g, i * g);
+//		}
+//
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	print_table(n);
+//
+//	return 0;
+//}
+//函数设计高内聚低耦合： 高内聚-函数应该足够独立，低耦合-与别的函数没有太大关系
+//函数可以没有参数，必须有返回值
+
+//逗号表达式(从左向右一次计算,结果靠右)
+//exec((v1, v2)，(v3, v4), v5, v6);没有定义
+//exec((v2)，(v4), (v5),(v6));四个实参,
+int Fun(int n)
 {
-	if (n > 0)
+	if (n == 5)
 	{
-		hanoi(n - 1, a, c, b);
-		printf("%c ->%c\n", a, c);
-		hanoi(n - 1, b, a, c);	
+		return 2;
 	}
+	else
+		return 2 * Fun(n + 1);//递归了4次，2*2*2*2
 }
-
-
-
-
 int main()
 {
-	
-	scanf("%d", &n);
-	printf("步骤为: \n");
-	hanoi(n, 'A', 'B', 'c');
+	int n = 2;
+	Fun(n);
+	printf("%d\n", Fun(n));//16
 	return 0;
 }
