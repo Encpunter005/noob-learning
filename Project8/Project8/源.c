@@ -1,6 +1,7 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<math.h>
+#include<string.h>
 //int main()
 //{
 //	int a = 0;
@@ -162,21 +163,146 @@
 //	printf("%d\n", m3);
 //	return 0;
 //}
+//int main()
+//{
+//	double m = 0;
+//	int n = 0;
+//	double height = 0;
+//	double distance = 0;
+//    scanf("%d %d", &m, &n);
+//	while (n--)
+//	{
+//		m /= 2;
+//		height = m;
+//		distance += m * 3;
+//		
+//	
+//	}
+//	printf("高度%.2lf 距离%.2lf\n", height,distance);
+//	return 0;
+//}
+//int main()
+//{
+//	for (int i = 1; i <= 9; i++)
+//	{
+//		for (int j = 1; j <= i; j++)
+//		{
+//			int s = i * j;
+//			printf("%d*%d=%d\n", i, j, s);
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int max = 100;
+//	int min = 0;
+//	int count = 0;
+//	int mid = 0;
+//	while(1)
+//	{
+//		mid = (max + min) / 2;
+//		count++;
+//		if (mid > n)
+//		{
+//			printf("猜大了 %d\n",mid);
+//			max= mid -1;
+//		}
+//		else if (mid < n)
+//		{
+//			printf("%猜小了  %d\n",mid);
+//			min= mid +1;
+//		}
+//		else
+//		{
+//			printf("猜出来了 %d", mid);
+//			break;
+//		}
+//		
+//	} 
+//	printf("最终猜测了%d次\n", count);
+//	return 0;
+//}
+int ids[5] = { 10001,10002,10003,10004 };
+char names[5][10] = { "张三", "李四", "王五", "赵六" };
+char passwords[5][16] = { "aaaaa","bbbbb","ccccc","ddddd" };
+int uNum = 4;
+
+char* selectUserById(int uid)
+{
+	for (int i = 0; i < uNum; i++)
+	{
+		if (uid == ids[i])
+		{
+			return names[i];
+		}
+	}
+	return NULL;
+}
+char* selectPassById(int uid)
+{
+	for (int j = 0; j < uNum; j++)
+	{
+		if (ids[j] == uid)
+		{
+			return passwords[j];
+		}
+	}
+	return NULL;
+}
+char input[17];
+int login(int uid, char* password)
+{
+	if (selectUserById(uid) == NULL)
+	{
+		return 1;
+	}
+
+		if (selectPassById(uid) == NULL)
+		{
+			return 2;
+
+		}
+		if (strcmp(input, passwords) != 0)
+		{
+			return 2;
+		}
+		else
+		{
+			return 3;
+		}		
+}
+
+void showLoginPage()
+{
+
+	printf("请输入账号密码\n");
+	int uid = 0;
+	scanf("%d %s",&uid, input);
+	while (getchar() != '\n');
+	char* selectUserById(uid);
+	char* selectPassById(uid);
+	login(uid, input);
+	int result = login(uid, input);
+	switch (result)
+	{
+	case 1:
+		printf("账号不存在, 并提示正在进入注册界面");
+		break;
+	case 2:
+		printf("密码错误, 请重新登录");
+		break;
+	case 3:
+		printf("登录成功, 正在进入首页");
+		break;
+
+	}
+
+}
 int main()
 {
-	double m = 0;
-	int n = 0;
-	double height = 0;
-	double distance = 0;
-    scanf("%d %d", &m, &n);
-	while (n--)
-	{
-		m /= 2;
-		height = m;
-		distance += m * 3;
-		
-	
-	}
-	printf("高度%.2lf 距离%.2lf\n", height,distance);
+	showLoginPage();
 	return 0;
 }
