@@ -229,10 +229,12 @@ int ids[5] = { 10001,10002,10003,10004 };
 char names[5][10] = { "张三", "李四", "王五", "赵六" };
 char passwords[5][16] = { "aaaaa","bbbbb","ccccc","ddddd" };
 int uNum = 4;
-
+char input[17];
+int uid = 0;
+int count = 0;
 char* selectUserById(int uid)
 {
-	for (int i = 0; i < uNum; i++)
+	for (int i = 0; i <= uNum; i++)
 	{
 		if (uid == ids[i])
 		{
@@ -243,66 +245,89 @@ char* selectUserById(int uid)
 }
 char* selectPassById(int uid)
 {
-	for (int j = 0; j < uNum; j++)
+	for (int j = 0; j <= uNum; j++)
 	{
-		if (ids[j] == uid)
+		if (uid == ids[j])
 		{
 			return passwords[j];
 		}
 	}
 	return NULL;
 }
-char input[17];
 int login(int uid, char* password)
 {
 	if (selectUserById(uid) == NULL)
 	{
 		return 1;
 	}
-
-		if (selectPassById(uid) == NULL)
-		{
-			return 2;
-
-		}
-		if (strcmp(input, passwords) != 0)
-		{
-			return 2;
-		}
-		else
-		{
-			return 3;
-		}		
-}
-
-void showLoginPage()
-{
-
-	printf("请输入账号密码\n");
-	int uid = 0;
-	scanf("%d %s",&uid, input);
-	while (getchar() != '\n');
-	char* selectUserById(uid);
-	char* selectPassById(uid);
-	login(uid, input);
-	int result = login(uid, input);
-	switch (result)
+	if (selectPassById(uid) == NULL)
 	{
-	case 1:
-		printf("账号不存在, 并提示正在进入注册界面");
+		return 2;
+	}
+	if (strcmp(passwords, input )==0)
+	{
+		return 3;
+	}
+	else
+	{
+		return 2;
+	}
+}
+int showLoginPage()
+{
+	printf("please input your account and passwords\n");
+	scanf("%d %s",&uid,input );
+	while(getchar()!= '\n');
+	selectUserById(uid);
+	selectPassById(uid);
+	login(uid, input);
+	switch (login(uid, input))
+	{
+	case 1 :
+		printf("账号不存在\n");
+		count = 2;
+		return count;
 		break;
 	case 2:
-		printf("密码错误, 请重新登录");
+		printf("密码错误\n");
+		count = 2;
+		return count;
 		break;
 	case 3:
-		printf("登录成功, 正在进入首页");
+		printf("登录成功\n");
+		count = 5;
+		return count;
 		break;
-
 	}
-
 }
 int main()
 {
-	showLoginPage();
+
+	do {
+		count++;
+		showLoginPage();
+	} while (count <= 3);
+
 	return 0;
 }
+//int sum = 0;
+//int func(int *pa,int *pb)
+//{
+//	sum = *pa + *pb;
+//	return sum;
+//}
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	int* pa = a;
+//	int* pb = b;
+//	int arr[5];
+//	for (int i = 0; i <= 4; i++)
+//	{
+//		func(&a, &b);
+//		arr[i] = sum;
+//		printf("%d\n", arr[i]);
+//	}
+//	return 0;
+//}
