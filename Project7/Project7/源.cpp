@@ -377,28 +377,102 @@
 //	else
 //		return 0;
 //}
-int my_strlen(char* str)
-{
-	char* start = str;
-	while (*str != '\0')
-	{
-		str++;
-	}
-	return str - start;
-}
-int main()
-{
-	char ch[] = { "abc" };
-	int len = my_strlen(ch);
-	printf("%d\n", len);
-	return 0;
-}
-
-
-////操作符
+//int my_strlen(char* str)
+//{
+//	char* start = str;
+//	while (*str != '\0')
+//	{
+//		str++;
+//	}
+//	return str - start;
+//}
+//int main()
+//{
+//	char ch[] = { "abc" };
+//	int len = my_strlen(ch);
+//	printf("%d\n", len);
+//	return 0;
+//}
+//指针的关系运算
+//int main()
+//{
+//	float values[VALUE];
+//	float* vp;
+//	for (vp = &values[VALUE]; vp > &values[0];)
+//	{
+//		*--vp = 0;
+//	}
+//	return 0;
+//}
+//指针与数组
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	printf("%p\n", arr);
+//	printf("%p\n", &arr[0]);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%p <===> %p\n", &arr[i], p + i);
+//		*(p + i) = i;
+//	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = arr;
+//	printf("%d\n", 2[arr]);
+//	printf("%d\n", arr[2]);
+//	//[] 是一个操作符， 2和arr是两个操作数 
+//	//arr[2] == *(p + 2);
+//	return 0;
+//}
+//二级指针
+//int main()
+//{
+//	int a = 10;
+//	int* pa = &a;//pa是指针变量，一级指针
+//	int* *ppa = &pa;//pa也是个变量，&pa取出pa在内存中的起始地址,二级指针变量
+//	int*** pppa = &ppa;//三级指针
+//	return 0;
+//}
+//指针数组---本质上是个数组
+//int main()
+//{
+//	int arr[10];//整型数组--存放整形的数组就是整型数组
+//	char ch[5];//字符数组--存放的是字符
+//	//指针数组--存放指针的数组
+//	int* parr[5];//整形指针的数组
+//	char* pch[5];
+//	return 0;
+//}
+//操作符
 //int main()
 //{
 //	int a = 1234;
 //	printf("%d", printf("%d", printf("%d", printf("%d", a))));//printf返回值是字符串的个数
 //	return 0;
 //}
+//结构体初阶
+struct Stu
+{
+	int height = 178;
+	char name[20] = "张三";
+	int age =
+};
+int main()
+{
+
+	return 0;
+}
