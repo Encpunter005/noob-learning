@@ -296,37 +296,106 @@
 //	}
 //	return 0;
 //}
-int* test()
-{
-	int a = 10;
-	return &a;
-}//a局部变量被销毁
-int main()
-{
-	int *p=test();
-	*p = 20;
-	return 0;
-}
+//int* test()
+//{
+//	int a = 10;
+//	return &a;
+//}//a局部变量被销毁
+//int main()
+//{
+//	int *p=test();
+//	*p = 20;
+//	return 0;
+//}
 //规避野指针、
 // 1.指针初始化
 // 2.小心指针越界
 // 3.指针指向空间释放及时置NULL
 // 4.指针使用之前检查有效性
+//int main()
+//{
+//	int* p = NULL;//当前不知道p应该初始化什么地址的时候，直接初始化为NULL
+//	//明确知道初始化的值
+//	int a = 10;
+//	int* pa = &a;
+//	//c语言本身是不会检查数组的越界行为
+//	int* ptr = NULL;
+//	if (*ptr != NULL)
+//	{
+//		*ptr = 10;
+//	}
+//	return 0;
+//}
+//指针+-整数
+#define VALUE 5
+//int main()
+//{
+//	float values[VALUE];
+//	float* vp;
+//	for (vp = &values[0]; vp < &values[VALUE];)
+//	{
+//		*vp++ = 0;//指针+整数---指针的关系运算！
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = arr;
+//	int* pend = arr + 9;
+//	while (*p <= *pend)
+//	{
+//		printf("%d\n",*p);
+//		*p++;
+//	}
+//	return 0;
+//}
+// 指针-指针
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	printf("%d\n", &arr[9] - &arr[0]);
+//	return 0;
+//	//指针-指针之间得到两个指针之间的元素个数
+//}
+//int my_strlen(char*str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//	{
+//		return 1 + my_strlen(str + 1);
+//	}
+//	else
+//		return 0;
+//}
+int my_strlen(char* str)
+{
+	char* start = str;
+	while (*str != '\0')
+	{
+		str++;
+	}
+	return str - start;
+}
 int main()
 {
-	int* p = NULL;//当前不知道p应该初始化什么地址的时候，直接初始化为NULL
-	//明确知道初始化的值
-	int a = 10;
-	int* pa = &a;
-	//c语言本身是不会检查数组的越界行为
-	int* ptr = NULL;
-	if (*ptr != NULL)
-	{
-		*ptr = 10;
-	}
+	char ch[] = { "abc" };
+	int len = my_strlen(ch);
+	printf("%d\n", len);
 	return 0;
 }
-//操作符
+
+
+////操作符
 //int main()
 //{
 //	int a = 1234;
