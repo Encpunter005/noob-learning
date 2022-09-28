@@ -465,14 +465,98 @@
 //	return 0;
 //}
 //结构体初阶
-struct Stu
+//struct b
+//{
+//	char c;
+//	double d;
+//	short s;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct b sb;
+//	int height;
+//	char name[20];//名字
+//	int age;
+//} s1,s2;//这两个也是结构体变量（全局）
+//int main()
+//{
+//	struct Stu s = { {'w',1.00,20},175,"zhangsan",19 };//对象
+//	return 0;
+//}
+//结构体成员的访问
+//. ->
+//struct b
+//{
+//	char c;
+//	double d;
+//	short s;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct b sb;
+//	int height;
+//	char name[20];//名字
+//	int age;
+//} s1,s2;//这两个也是结构体变量（全局）
+//int main()
+//{
+//	struct Stu s = { {'w',1.00,20},175,"zhangsan",19 };//对象
+//	printf("%c\n", s.sb.c);
+//	struct Stu* ps = &s;
+//	printf("%c\n", (*ps).sb.c);
+//	printf("%c\n", ps->sb.c);
+//	return 0;
+//}
+//结构体传参
+//struct b
+//{
+//	char c;
+//	double d;
+//	short s;
+//};
+//struct Stu
+//{
+//	//成员变量
+//	struct b sb;
+//	int height;
+//	char name[20];//名字
+//	int age;
+//} s1,s2;//这两个也是结构体变量（全局）
+//void print1(struct Stu t)
+//{
+//	printf("%d %c %d\n", t.sb.s, t.sb.c, t.height);
+//}
+//void print2(struct Stu* ps)
+//{
+//	printf("%c %lf %d", ps->sb.c, ps->sb.d, ps->sb.s);
+//}
+//int main()
+//{
+//	struct Stu s = { {'w',1.00,20},175,"zhangsan",19 };
+//	//写一个函数打印s的内容
+//	print1(s);//传值调用--需要开辟内存空间，时间浪费
+//	print2(&s);//传址调用--效率更高，建议
+//	return 0;
+//}
+//函数调用的参数压栈
+//栈，是一种数据结构
+//先进的后出，后进的先出
+//压栈，出栈
+//  3
+//  2
+//  1
+//函数栈帧的创建与销毁
+int add(int x, int y)//x,y不在add开辟的内存空间中
 {
-	int height = 178;
-	char name[20] = "张三";
-	int age =
-};
+	return x + y;
+}
 int main()
 {
-
+	int a = 3;
+	int b = 5;
+	int c = 0;
+	c = add(a, b);//参数从右向左传--压栈操作--单独开辟a',b'空间,a'->x,b'->y
 	return 0;
 }
