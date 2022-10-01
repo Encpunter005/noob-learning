@@ -548,15 +548,142 @@
 //  2
 //  1
 //函数栈帧的创建与销毁
-int add(int x, int y)//x,y不在add开辟的内存空间中
-{
-	return x + y;
-}
+//int add(int x, int y)//x,y不在add开辟的内存空间中
+//{
+//	return x + y;
+//}
+//int main()
+//{
+//	int a = 3;
+//	int b = 5;
+//	int c = 0;
+//	c = add(a, b);//参数从右向左传--压栈操作--单独开辟a',b'空间,a'->x,b'->y
+//	return 0;
+//}
+#include<assert.h>
+//void copystrcpy( char* pa, char* pa2)
+//{
+//	assert(pa2 != NULL);//断言
+//	while (*pa2 != '\0')
+//	//while(*pa++=*pa2++)
+//	{
+//		*pa = *pa2;
+//		*pa++;
+//		*pa2++;
+//	}
+//	*pa = *pa2;
+//	
+//}
+//int main()
+//{
+//	char arr[] = "xxxxxxx";
+//	char arr2[] = "hello";
+//	int sz = sizeof(arr2) / sizeof(arr2[0]);
+//	copystrcpy(arr,arr2);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//int main()
+//{
+//	int zippo[4][2] = { {2,4},{6,8},{1,3},{5,7} };
+//	printf("zippo  = %p, zippo+1 = %p\n", zippo, zippo + 1);
+//
+//	return 0;
+//}
+#include<stdlib.h>
+//动态内存开辟的常见错误
+//1.对NULL指针的接引用操作
+//int main()
+//{
+//	//对malloc函数的返回值，做判断
+//	int* p = (int*)malloc(1000000000);
+//	for (int i = 0; i < 10; i++)
+//	{
+//		*(p + i) = i;//非法访问内存
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+////2.对动态开辟空间的越界访问
+//
+//int* p =(int *) malloc(10 * sizeof(int));
+//if (p == NULL)
+//{
+//	return 1;
+//}
+//for (int i = 0; i < 40; i++)
+//{
+//	*(p + i) = i;//越界访问
+//}
+//free(p);
+//p = NULL;
+//	return 0;
+//}
+//int main()
+//{//3.使用free释放非动态开辟的空间
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	//使用
+//	free(p);//使用free释放非动态开辟的空间
+//	return 0;
+//}
+//int main()
+//{
+//	//4.释放了后半部分的内存
+//	int* p = (int *)malloc(10 * sizeof(int));
+//	if (p == NULL)
+//	{
+//		return 1;
+//	}
+//	for (int i = 0; i < 5; i++)
+//	{
+//		*p++;
+//	}
+//	free(p);//释放了后半部分的内存
+//	p = NULL;
+//	return 0;
+//}
+//int main()
+//{
+//	//5.对同一块动态内存开辟的空间，多次释放
+//	int* p = (int*)malloc(100);
+//	free(p);
+//	//再次释放
+//	return 0;
+//}
+//void test()
+//{
+//	int* p = (int*)malloc(100);//动态开辟的空间，两种回收方式
+//	//1.主动free
+//	//2.程序结束（生命周期到了）
+//	if (p == NULL)
+//	{
+//		return ;
+//	}
+//	//使用
+//}
+//
+//int main()
+//{//动态开辟的空间忘记释放，内存泄露
+//	test();
+//	return 0;
+//}
+
+//好神奇的写法
+//int main()
+//{
+//	int arr[] = {1,2,3,4,5};
+//	int* o = arr;
+//	printf("%d", o[2]);
+//	return 0;
+//}
+
+//指针进阶 
 int main()
 {
-	int a = 3;
-	int b = 5;
-	int c = 0;
-	c = add(a, b);//参数从右向左传--压栈操作--单独开辟a',b'空间,a'->x,b'->y
+	890777777777777777-6-----
 	return 0;
 }
