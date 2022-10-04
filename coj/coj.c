@@ -77,3 +77,37 @@
 // short是signed short
 //指针
 //字符指针
+// int main(){
+//     char ch = 'q';
+//     char *pc = &ch;
+//     //本质上是把 "hello wolrd"这个字符串的首字符的地址存放在了ps中
+//     char *ps = "hello world";
+//     char arr[] = {"hello world"};
+//     printf("%s\n",arr);
+//     return 0;
+// }
+// int main(){//来源《剑指offer》p49
+//     char str1[] = {"hello world."};
+//     char str2[] = {"hello world."};
+//     const char* str3[] = {"hello world."};//常量字符串
+//     const char* str4[] = {"hello world."};//常量字符串，只有一份
+//     if(str1 == str2) printf("str1 and str2 are the same\n");
+//     else printf("str1 and str2 are not same\n");
+//     if(str3 == str4) printf("str3 and str4 are the same\n");
+//     else printf("str3 and str4 are not same\n");
+//     int a = 4321;
+//     printf("%d",printf("%d",printf("%d",printf("%d",printf("%d",a)))));
+//     return 0;//str1 str2一样 str4 str3一样
+// }
+//一级指针传参
+void print(int *p,int sz){
+     for(int i = 0;i < sz;i++) printf("%d\n",*(p+i));
+}
+int main(){
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int *p =arr;
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    //p是一级指针
+    print(p,sz);
+    return 0;
+}
