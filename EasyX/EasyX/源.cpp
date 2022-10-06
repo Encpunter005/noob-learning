@@ -153,26 +153,91 @@
 //}
 
 
-int main() {
-    //图像处理
-//变量名：IMAGE example IMAGE img;
-//loadimage
-// - pDstImg 保存图像的IMAGE对象指针
-// - pImgFile 图片文件名
-// - nWidth = 0 图片的拉伸宽度
-// - nHeight = 0 图片的拉伸高度
-// - bResize = false 是否调整IMAGE的大小以适应图片
-// putimage 在当前设备上绘制指定图像
-// - dstX 绘制位置的x坐标
-// - dstY 绘制位置的y坐标
-// - pSrcImg 要绘制的IMAGE对象指针
-// - dwRop = SRCCOPY 三元光栅操作码
-//  
-//输出图片
-    IMAGE img;//定义一个（变量）对象
-    //加载图片
-    
-    return 0;
-}
-
-
+//int main() {
+//    initgraph(1280, 720, SHOWCONSOLE);
+//    //图像处理
+////变量名：IMAGE example IMAGE img;
+////loadimage
+//// - pDstImg 保存图像的IMAGE对象指针
+//// - pImgFile 图片文件名
+//// - nWidth = 0 图片的拉伸宽度
+//// - nHeight = 0 图片的拉伸高度
+//// - bResize = false 是否调整IMAGE的大小以适应图片
+//// putimage 在当前设备上绘制指定图像
+//// - dstX 绘制位置的x坐标
+//// - dstY 绘制位置的y坐标
+//// - pSrcImg 要绘制的IMAGE对象指针
+//// - dwRop = SRCCOPY 三元光栅操作码
+////  
+////输出图片
+//    IMAGE img;//定义一个（变量）对象
+//    //加载图片
+//    //相对路径 ./表示当前文件夹下， ../当前文件夹的上一级
+//    //绝对路径：资源管理器那玩意
+//    loadimage(&img, "./05e693efa815d44eb023671eadf3a1d6af34cf5d.jpg");
+//    putimage(0, 0, &img);
+//    getchar();
+//    closegraph();
+//    return 0;
+//}
+//int main()
+//{//鼠标操作
+////MouseHit()判断是否有鼠标信息（左键，右键，中间，移动）
+////如果有鼠标消息就可以进行接受鼠标信息了msg = GetMouseMsg()
+////鼠标消息主要成员
+//// - uMsh: 当前鼠标消息   可以用来判断当前鼠标是什么消息
+//// 	   - WM_LBUTTONDOWN 鼠标左键消息
+//// 	   - WM_RBUTTONDOWN 鼠标右键消息
+//// - x: 当前鼠标x坐标
+//// - y: 当前鼠标y坐标
+//// 
+//	initgraph(1280, 720, SHOWCONSOLE);
+//	while (1)
+//	{
+//	
+//	 if (MouseHit())
+//	 {
+//		 cleardevice();
+//		MOUSEMSG msg = GetMouseMsg();
+//		printf("坐标(%d,%d)\n", msg.x, msg.y);
+//		//消息分发
+//		switch (msg.uMsg)
+//		{
+//		case WM_LBUTTONDOWN:
+//			outtextxy(400, 400, "鼠标左键按下");
+//			break;
+//		case WM_RBUTTONDOWN:
+//			outtextxy(600, 600, "鼠标右键按下");
+//			break;
+//		}
+//	 }
+//    } 
+//	getchar();
+//    closegraph();
+//	return 0;
+//}
+//非easyx获取鼠标信息
+//getch();--需要头文件 conio.h
+// 需要用返回值来判断
+// - 与非ASC||表字符的按键比较，需要用虚拟键值
+//    - 上：72
+//    - 下：80
+//    - 左：75
+//    - 右：77
+// - 如果是与字母比较直接写字母，比如'A'
+//GetAsyncKeyState(键值) windows.h (Easyx有包含这东西，但得先有graphics.h)
+// - 需要键值
+//    - 上： VK_UP
+//    - 下： VK_DOWN
+//    - 左： VK_LEFT
+//    - 右： VK_RIGHT
+// 
+//
+//其他函数
+//BeginBatchDraw() 开始批量绘图
+//EndBarchDraw() 结束批量绘制
+//GetHWnd 获取窗口句柄，获取之后可以用来操作窗口
+// - HWND hWnd = GetHWnd() 获取窗口句柄
+// - 修改窗口标题：SetWindowText(hWnd,"love");
+// - 设置模态对话框：MessageBox(hWnd,"我是消息框","我是标题", MB_OKCANCEL)
+//
