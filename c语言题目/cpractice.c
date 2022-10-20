@@ -94,43 +94,192 @@
 
 
 //4.输入某年某月某日，判断这一天是这一年的第几天？
-int main() {
-	int year, month, day;
-	int sum, leap;
-	scanf("%d%d%d", &year, &month, &day);
-	switch (month) {
-	case 1:
-		sum = 0;
-		break;
-	case 2:
-		sum = 31;
-		break;
-	case 3:
-		sum = 59;
-		break;
-	case 4:
-		sum = 90;
-		break;
-	case 5:
-		sum = 120;
-		break;
-	case 6:
-		sum = 151;
-		break;
-	case 7:sum = 181; break;
-	case 8:sum = 212; break;
-	case 9:sum = 243; break;
-	case 10:sum = 273; break;
-	case 11:sum = 304; break;
-	case 12:sum = 334; break;
-	default:printf("data error\n"); break;
-	
-	}
-	sum = day + sum;
-	if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) leap = 1;
-	else leap = 0;
-	if (leap == 1 && month > 2) sum++;
-	printf("这是这年第%d天\n", sum);
+//int main() {
+//	int year, month, day;
+//	int sum, leap;
+//	scanf("%d%d%d", &year, &month, &day);
+//	switch (month) {
+//	case 1:
+//		sum = 0;
+//		break;
+//	case 2:
+//		sum = 31;
+//		break;
+//	case 3:
+//		sum = 59;
+//		break;
+//	case 4:
+//		sum = 90;
+//		break;
+//	case 5:
+//		sum = 120;
+//		break;
+//	case 6:
+//		sum = 151;
+//		break;
+//	case 7:sum = 181; break;
+//	case 8:sum = 212; break;
+//	case 9:sum = 243; break;
+//	case 10:sum = 273; break;
+//	case 11:sum = 304; break;
+//	case 12:sum = 334; break;
+//	default:printf("data error\n"); break;
+//	
+//	}
+//	sum = day + sum;
+//	if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) leap = 1;
+//	else leap = 0;
+//	if (leap == 1 && month > 2) sum++;
+//	printf("这是这年第%d天\n", sum);
+//
+//	return 0;
+//}
 
-	return 0;
-}
+//5.输入三个整数x,y,z，请把这三个数由小到大输出。
+//int main() {
+//	int x, y, z;
+//	scanf("%d%d%d", &x, &y, &z);
+//	if (x > y) {
+//		int temp = x;
+//		x = y;
+//		y = temp;
+//	}
+//	if (y > z) {
+//		int temp2 = y;
+//		y = z;
+//		z = temp2;
+//	}
+//	if (x > z) {
+//		int temp3 = x;
+//		x = z;
+//		z = temp3;
+//	}
+//	printf("%d %d %d \n", x, y, z);
+//	return 0;
+//}
+
+//6.用*号输出字母C的图案。
+//int main() {
+//    printf("   ****\n");
+//    printf(" **\n");
+//    printf("*\n");
+//    printf(" **\n");
+//    printf("   ****\n");
+//	return 0;
+//}
+
+//7.输出特殊图案，请在c环境中运行，看一看，Very Beautiful!
+//int main()
+//{
+//    char a = 176, b = 219;
+//    printf("%c%c%c%c%c\n", b, a, a, a, b);
+//    printf("%c%c%c%c%c\n", a, b, a, b, a);
+//    printf("%c%c%c%c%c\n", a, a, b, a, a);
+//    printf("%c%c%c%c%c\n", a, b, a, b, a);
+//    printf("%c%c%c%c%c\n", b, a, a, a, b);
+//    return 0;
+//}
+
+//8.输出9*9口诀。
+//int main() {
+//	for (int i = 1; i <= 9; i++) {
+//		for (int j = 1; j <= 9; j++) {
+//			printf("%d * %d = %d\n", i, j, i * j);
+//		}
+//	}
+//	return 0;
+//}
+
+//9.要求输出国际象棋棋盘。
+//int main() {
+//	for (int i = 0; i <= 8; i++) {
+//		for (int j = 0; j <= 8; j++) {
+//			if ((i + j) % 2 == 0) printf("%c%c", 219, 219);
+//			else printf("  ");
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+
+//10.打印楼梯，同时在楼梯上方打印两个笑脸。
+//int main() {
+//	printf("\1\1\n");
+//    for (int i = 1; i < 11; i++)
+//    {
+//        for (int j = 1; j <= i; j++)
+//            printf("%c%c", 219, 219);
+//        printf("\n");
+//    }
+//	return 0;
+//}
+
+//11.古典问题（兔子生崽）：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？（输出前40个月即可）
+//int main() {
+//	int time = 0;
+//	int i = 2;
+//	int j = 0;
+//	while (time < 40)
+//	{
+//		printf("%d\n", i + j);
+//		time += 3;
+//		i += 2;
+//		j += 2;
+//	}
+//	return 0;
+//}
+
+////12.判断 101 到 200 之间的素数。
+//#include<math.h>
+//int main() {
+//	for (int i = 101; i <= 200; i++) {
+//		if (i % 2 != 0 && i % (int)sqrt(i) != 0) printf("%d ", i);
+//	}
+//	return 0;
+//}
+//#include <stdio.h>
+// 
+//int main()
+//{
+//    int i, j;
+//    int count = 0;
+//
+//    for (i = 101; i <= 200; i++)
+//    {
+//        for (j = 2; j < i; j++)
+//        {
+//            // 如果 j 能被 i 整除再跳出循环
+//            if (i % j == 0)
+//                break;
+//        }
+//        // 判断循环是否提前跳出，如果 j<i 说明在 2~j 之间,i 有可整除的数
+//        if (j >= i)
+//        {
+//            count++;
+//            printf("%d ", i);
+//            // 换行，用 count 计数，每五个数换行
+//            if (count % 5 == 0)
+//                printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//13.打印出所有的"水仙花数"，所谓"水仙花数"是指一个三位数，其各位数字立方和等于该数 本身。例如：153是一个"水仙花数"，因为153=1的三次方＋5的三次方＋3的三次方。
+//int main() {
+//	int w = 0;
+//	int e = 0;
+//	int t = 0;
+//	int result;
+//	for (int i = 100; i < 1000; i++) {
+//		w = i % 10;//个位
+//		e = i / 10 % 10;//十位
+//		t = i / 100;//百位
+//		result = (w * w * w) + (e * e * e) + (t * t * t);
+//		if (i == result) printf("%d \n", result);
+//	}
+//	return 0;
+//}
+
+//14.将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。
+ 
