@@ -312,80 +312,80 @@ int main(){
 // }
 
 //补充，链表
-#include<stdio.h>
-#include<stdlib.h>//molloc()
-#include<string.h>
-const int  TSIZE = 45;
-struct film {
-    char title[TSIZE];
-    int rating;
-    struct film * next;
+// #include<stdio.h>
+// #include<stdlib.h>//molloc()
+// #include<string.h>
+// const int  TSIZE = 45;
+// struct film {
+//     char title[TSIZE];
+//     int rating;
+//     struct film * next;
 
-};
-char * s_gets(char *st,int n );
-int main(){
-    struct film * head = NULL;
-    struct film * prev , * current;
-    char input[TSIZE];
-    puts("Enter first movive title:");
-    while (s_gets(input,TSIZE) != NULL && input[0] != '\0'){
-        current = (struct film *) malloc(sizeof(struct film));
-        if(head == NULL)   head = current; //第一个结构
-        else { //后续结构
-            prev -> next = current;
-            current -> next = NULL;
-            strcpy(current -> title, input);
-            puts("Enter your rating <0-10>:");
-            scanf("%d", &current -> rating);
-            while (getchar() != '\n');
-            continue;
-            puts("Enter next movie title (empty line to stop):");
-            prev = current;
+// };
+// char * s_gets(char *st,int n );
+// int main(){
+//     struct film * head = NULL;
+//     struct film * prev , * current;
+//     char input[TSIZE];
+//     puts("Enter first movive title:");
+//     while (s_gets(input,TSIZE) != NULL && input[0] != '\0'){
+//         current = (struct film *) malloc(sizeof(struct film));
+//         if(head == NULL)   head = current; //第一个结构
+//         else { //后续结构
+//             prev -> next = current;
+//             current -> next = NULL;
+//             strcpy(current -> title, input);
+//             puts("Enter your rating <0-10>:");
+//             scanf("%d", &current -> rating);
+//             while (getchar() != '\n');
+//             continue;
+//             puts("Enter next movie title (empty line to stop):");
+//             prev = current;
 
 
-        }
-    }
-    //显示电影列表
-    if(head == NULL) printf("No data entered. ");
-    else{
-        printf("Here is the movie list:\n");
-        current = head;
-        while (current != NULL){
-            printf("Movie: %s Rating %d\n",current -> title, current ->rating);
-            current = current -> next;
+//         }
+//     }
+//     //显示电影列表
+//     if(head == NULL) printf("No data entered. ");
+//     else{
+//         printf("Here is the movie list:\n");
+//         current = head;
+//         while (current != NULL){
+//             printf("Movie: %s Rating %d\n",current -> title, current ->rating);
+//             current = current -> next;
 
-        }
+//         }
         
-    }
-    //完成任务，释放内存
-    current = head;
-    while(current != NULL){
-        current = head;
-        head = current -> next;
-        free(current);
-        current = NULL;
-    }
-    printf("Bye!\n");
+//     }
+//     //完成任务，释放内存
+//     current = head;
+//     while(current != NULL){
+//         current = head;
+//         head = current -> next;
+//         free(current);
+//         current = NULL;
+//     }
+//     printf("Bye!\n");
 
 
-    return 0;
-}
-char * s_gets(char * st,int n){
+//     return 0;
+// }
+// char * s_gets(char * st,int n){
 
-    char * ret_val;
-    char * find;
-    ret_val = fgets(st ,n, stdin);
-    if(ret_val){
-        find = strchr(st,'\n');
-        if(find) *find = '\0';
-        else {
-            while(getchar() != '\n')
-            continue;
-        }
-        return ret_val;
+//     char * ret_val;
+//     char * find;
+//     ret_val = fgets(st ,n, stdin);
+//     if(ret_val){
+//         find = strchr(st,'\n');
+//         if(find) *find = '\0';
+//         else {
+//             while(getchar() != '\n')
+//             continue;
+//         }
+//         return ret_val;
 
-    }
-}
+//     }
+// }
 //时间换算
 /* #include<stdio.h>
 int main(){
@@ -397,3 +397,70 @@ int main(){
 	printf("%d:%02d:%02d",h,m,s);
 	return 0;
 } */
+
+//元素逆序
+// #include<iostream>
+// #include<string.h>
+// using namespace std;
+// const int SIZE = 100;
+// int main(){
+//     int count , n;
+//     cin >> count;
+//     int arr[SIZE];
+//     memset(arr,0,SIZE);
+//     for(int i = 0;i < count;i++){
+//         cin >> n;
+//         arr[i] = n;
+//     }
+//     int start = 0;
+//     int end = count - 1;
+//     while(start < end){
+//         arr[start] += arr[end];
+//         arr[end] = arr[start] - arr[end];
+//         arr[start] -= arr[end];
+//         start ++;
+//         end --;
+//     }
+//     for(int j = 0; j < count; j++){
+//         printf("arr[%d] = %d\n",j,arr[j]);
+//     }
+
+//     return 0;
+// }
+
+
+// #include<iostream>
+// using namespace std;
+// int n, ans;
+// void walk(int k) {
+//     if(k == n) ans ++;
+//     else if(k < n){
+//         walk(k + 1);
+//         walk(k + 2);
+//     }
+// }
+// int main(){
+//     cin >> n;
+//     walk(0);
+//     cout << ans << endl;
+//     return 0;
+// }
+
+
+// #include<iostream>
+// using namespace std;
+// int n, m;
+// int ans;
+// void walk(int x, int y){
+//     if(x == n && y == m) ans ++;
+//     else{
+//         if(y < m) walk(x , y + 1);
+//         if(x < n) walk(x + 1 , y);
+//     }
+// }
+// int main(){
+//     cin >> n >> m;
+//     walk(0 , 0);
+//     cout << ans << endl;
+//     return 0;
+// }
