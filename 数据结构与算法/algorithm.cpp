@@ -67,4 +67,89 @@
 //     return 0;
 // }
 
+//二分
+//整数类型二分 
+// #include<iostream>
+// using namespace std;
+// const int N = 100010;
+// int n , m;
+// int q[N];
+// int main(){
+//     scanf("%d%d", &n,&m);
+//     for(int i = 0; i < n; i ++) scanf("%d", &q[i]);
+    
+//     while(m --){
+//         int x;
+//         scanf("%d", &x);
 
+//         int l = 0, r = n - 1;
+//         while(l < r){
+//             int mid = l + r >> 1;
+//             if(q[mid] >= x) r = mid;
+//             else l = mid + 1;
+//         }
+//         if(q[l]  != x) cout << "-1 -1" << endl;
+//         else{
+        
+//             cout << l << " ";
+//             int l = 0, r = n - 1;
+//             while(l < r){
+//                 int mid = l + r + 1 >> 1;
+//                 if(q[mid] <= x) l = mid;
+//                 else r = mid - 1;
+//         }
+//         cout << l << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+//浮点数二分
+// #include<iostream>
+// using namespace std;
+// double n;
+// int main(){
+//     cin >> n;
+//     double l = -1000 , r = 1000;
+//     while(r - l >= 1e-8){
+//         double mid = (l + r) / 2;
+//         if(mid * mid * mid > n) r = mid;
+//         else l = mid;
+//     }
+//     printf("%.6lf\n", l);
+//     return 0;
+// }
+
+
+//高精度
+
+//加法
+
+#include<iostream>
+#include<vector>
+using namespace std;
+vector<int> add(vector<int> &A, vector<int> &B){
+    vector<int> C;
+    int t = 0;
+    for(int i = 0; i < A.size() || i < B.size(); i ++){
+        if(i < A.size()) t += A[i];
+        if(i < B.size()) t += B[i];
+        C.push_back(t % 10);
+        t /= 10;
+    }
+    if(t) C.push_back(t);
+    return C;
+
+}
+int main(){
+    string a ,b;
+    cin >> a >> b;
+    vector<int> A , B;
+    for(int i = a.size() - 1; i >= 0; i --) A.push_back(a[i] - '0');
+    for(int i = b.size() - 1; i >= 0; i --) B.push_back(b[i] - '0');
+    auto C = add(A ,B);
+    for(int i = C.size() - 1; i >=0; i --) cout << C[i];
+    return 0;
+}
